@@ -11,6 +11,7 @@ public class Follower : MonoBehaviour
     [SerializeField] private float followSpeed = 5;
 
     public bool isInStation;
+    public bool isHalfway;
     public float distTraveled;
 
     void Start()

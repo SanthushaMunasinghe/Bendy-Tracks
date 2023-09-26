@@ -8,13 +8,14 @@ public class GameplayManager : MonoBehaviour
    
     private int tramCount;
     public int resetCount = 0;
+    public int initialCount = 0;
 
     public int currentCoins;
     public int ticketPrice;
 
     void Start()
     {
-        SetCurrentCoins();
+        SetCurrentValues();
     }
 
     void Update()
@@ -28,9 +29,10 @@ public class GameplayManager : MonoBehaviour
             resetCount = tramCount;
     }
 
-    public void SetCurrentCoins()
+    public void SetCurrentValues()
     {
-        currentCoins = 300;
+        currentCoins = 100;
+        ticketPrice = 100;
     }
 
     public void GenerateCoins()

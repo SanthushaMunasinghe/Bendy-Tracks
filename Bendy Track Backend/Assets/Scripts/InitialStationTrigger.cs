@@ -10,17 +10,26 @@ public class InitialStationTrigger : MonoBehaviour
     {
         if (tramCol.tag == "Tram")
         {
-            tramCol.gameObject.GetComponent<Follower>().isInStation = true;
-            tramCol.gameObject.GetComponent<Follower>().distTraveled = 0;
+            Follower follower = tramCol.gameObject.GetComponent<Follower>();
+            follower.isInStation = true;
+            follower.distTraveled = 0;
+            gameplayManager.initialCount++;
 
             if (gameplayManager.resetCount != 0)
                 gameplayManager.resetCount--;
+
+            if (follower.isHalfway)
+                gameplayManager.GenerateCoins();
+
+            follower.isHalfway = false;
         }
     }
 
     private void OnTriggerExit(Collider tramCol)
     {
         if (tramCol.tag == "Tram")
+        {
             tramCol.gameObject.GetComponent<Follower>().isInStation = false;
+        }
     }
 }
