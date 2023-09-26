@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1153426823532643965}
   - component: {fileID: 1153426823532643962}
+  - component: {fileID: -2773694349811627255}
+  - component: {fileID: 1353712386}
   m_Layer: 0
   m_Name: GameplayManagerObj
   m_TagString: Untagged
@@ -44,7 +46,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 508eff0ab46f8314699882191b16a6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stationList: []
   tramList:
   - {fileID: 0}
   - {fileID: 0}
   resetCount: 0
+  currentCoins: 0
+--- !u!114 &-2773694349811627255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153426823532643963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776389fe040d90e4ea164bc1967ddbb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coins: {fileID: 0}
+--- !u!114 &1353712386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153426823532643963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e9e1bd4dc34cc942acc8fdd0157eb65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 64
