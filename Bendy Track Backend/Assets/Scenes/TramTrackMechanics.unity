@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 69075277}
   - component: {fileID: 69075276}
   m_Layer: 0
-  m_Name: Station
+  m_Name: InitialStation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -972,7 +972,7 @@ GameObject:
   - component: {fileID: 1282583262}
   - component: {fileID: 1282583261}
   m_Layer: 0
-  m_Name: Station (1)
+  m_Name: InitialStation (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
