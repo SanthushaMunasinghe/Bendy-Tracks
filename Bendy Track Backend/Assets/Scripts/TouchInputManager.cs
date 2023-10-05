@@ -17,24 +17,19 @@ public class TouchInputManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.touchCount > 0)
+        if (Input.GetMouseButton(0))
         {
-            Touch touch = Input.GetTouch(0);
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
-            if (touch.phase == TouchPhase.Began)
+            RaycastHit hit;
+
+            // Use the layer mask in the raycast
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, interactableLayer))
             {
-                Ray ray = mainCamera.ScreenPointToRay(touch.position);
-
-                RaycastHit hit;
-
-                // Use the layer mask in the raycast
-                if (Physics.Raycast(ray, out hit, Mathf.Infinity, interactableLayer))
+                if (hit.collider.tag == "Unlock")
                 {
-                    if (hit.collider.tag == "Unlock")
-                    {
-                        UnlockStation unlockStation = hit.collider.GetComponent<UnlockStation>();
-                        gameplayManager.UnlockStation(unlockStation.price, unlockStation.index, unlockStation.gameObject);
-                    }
+                    UnlockStation unlockStation = hit.collider.GetComponent<UnlockStation>();
+                    gameplayManager.UnlockStation(unlockStation.price, unlockStation.index, unlockStation.gameObject);
                 }
             }
         }
